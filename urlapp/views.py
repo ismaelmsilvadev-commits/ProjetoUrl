@@ -1,5 +1,5 @@
 from django.shortcuts import get_object_or_404
-from django.views.generic import RedirectView
+from django.views.generic import RedirectView, TemplateView
 
 from .models import Link
 
@@ -15,3 +15,8 @@ class RedirectUrlView(RedirectView):
         url_object = get_object_or_404(Link, code=code)
 
         return url_object.url_destination
+
+class IndexView(TemplateView):
+    template_name = 'urlapp/index.html'
+
+   
