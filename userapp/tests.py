@@ -56,8 +56,7 @@ class LoginLogoutViewTests(TestCase):
 
         self.assertEqual(response.status_code, 405)
 
-        # nova requisição que confirma que a sessão permanece
-        # new request confirms the session persists
-        
+        # 405 must not logout the user, the next lines test is the user still is authenticated
+
         response = self.client.get(reverse('urlapp:index'))
         self.assertTrue(response.wsgi_request.user.is_authenticated)
