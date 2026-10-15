@@ -36,9 +36,11 @@ class LoginLogoutViewTests(TestCase):
         self.assertTrue(response.context['form'].non_field_errors())
 
     def test_login_respects_next(self):
-        url = reverse('userapp:login') + '?next=/admin/'
-        response = self.client.post(url, {'username': self.user.username, 'password': self.password})
         next_url = reverse('admin:index')
+        url = reverse('userapp:login', query={'next': next_url})
+
+        response = self.client.post(url, {'username': self.user.username, 'password': self.password})
+
         self.assertRedirects(response, next_url, fetch_redirect_response=False)
 
     def test_logout_via_post_logs_out(self):
@@ -56,7 +58,6 @@ class LoginLogoutViewTests(TestCase):
 
         self.assertEqual(response.status_code, 405)
 
-        # 405 must not logout the user, the next lines test is the user still is authenticated
-
+        # 405 must not log the user out: a fresh request proves the session survived.
         response = self.client.get(reverse('urlapp:index'))
         self.assertTrue(response.wsgi_request.user.is_authenticated)
