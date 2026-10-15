@@ -104,3 +104,6 @@ MAILERS = {
 }
 
 AUTH_USER_MODEL = 'userapp.Usuario'
+LOGIN_REDIRECT_URL = 'urlapp:index'
+LOGIN_URL = 'userapp:login'
+LOGOUT_REDIRECT_URL = 'urlapp:index'
