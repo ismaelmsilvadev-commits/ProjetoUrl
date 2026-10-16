@@ -5,11 +5,8 @@ from django.contrib.messages.views import SuccessMessageMixin
 from .forms import RegisterForm
 
 
-# Create your views here.
-
-
 class RegisterView(SuccessMessageMixin, CreateView):
     form_class = RegisterForm
     template_name = 'userapp/register.html'
     success_url = reverse_lazy('urlapp:index')
-    success_message = "Conta criada! Bem-vindo(a)"
+    success_message = "Conta criada! Bem-vindo(a)."
