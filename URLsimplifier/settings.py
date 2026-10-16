@@ -7,6 +7,7 @@ from pathlib import Path
 import environ
 import os
 from django.contrib.messages import constants as messages
+
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
 TEMPLATES_DIR = BASE_DIR / 'templates'
@@ -107,10 +108,6 @@ AUTH_USER_MODEL = 'userapp.Usuario'
 LOGIN_REDIRECT_URL = 'urlapp:index'
 LOGIN_URL = 'userapp:login'
 LOGOUT_REDIRECT_URL = 'urlapp:index'
-MESSAGES_TAGS = {
-    messages.DEBUG: "secondary",
-    messages.INFO: "info",
-    messages.SUCCESS: "success",
-    messages.WARNING: "warning",
+MESSAGE_TAGS = {
     messages.ERROR: "danger",
 }
