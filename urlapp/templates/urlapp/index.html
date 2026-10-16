@@ -9,7 +9,7 @@
         <div class="d-grid gap-2 d-sm-flex justify-content-sm-center">
             {% if not user.is_authenticated %}
                 <a class="btn btn-outline-primary" href="{% url 'userapp:login' %}">Entrar</a>
-                <a class="btn btn-primary" href="{% url 'userapp:register'%}">Criar conta</a>
+                <a class="btn btn-primary" href="{% url 'userapp:register' %}">Criar conta</a>
             {% endif %}
         </div>
     </div>

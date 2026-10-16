@@ -28,13 +28,19 @@
                     </form>
                 {% else %}
                     <a class="btn btn-outline-primary" href="{% url 'userapp:login' %}">Entrar</a>
-                    <a class="btn btn-primary" href="{% url 'userapp:register'%}">Criar conta</a>
+                    <a class="btn btn-primary" href="{% url 'userapp:register' %}">Criar conta</a>
                 {% endif %}
             </div>
 
             </div>
         </div>
     </nav>
+
+    <div class="container">
+        {% for message in messages %}
+            <div class="alert alert-{{ message.tags }}" role="alert">{{ message }}</div>
+        {% endfor %}
+    </div>
 
     <main>
         {% block content %}
