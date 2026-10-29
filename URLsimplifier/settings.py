@@ -11,6 +11,7 @@ from django.contrib.messages import constants as messages
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
 TEMPLATES_DIR = BASE_DIR / 'templates'
+STATICFILES_DIRS = [BASE_DIR / 'static']
 
 # Inicializa o ambiente e define os tipos/valores padrões
 env = environ.Env(

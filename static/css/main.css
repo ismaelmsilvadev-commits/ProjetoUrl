@@ -1,0 +1,9 @@
+.helptext {
+    font-size: 0.875em;
+    color: var(--bs-secondary-color);
+}
+
+.helptext ul {
+    padding-left: 1rem;
+    margin-bottom: 0;
+}
