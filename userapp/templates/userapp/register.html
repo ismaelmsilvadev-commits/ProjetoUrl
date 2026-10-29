@@ -1,19 +1,18 @@
 {% extends 'base.html' %}
-{% block title %} Registrar {% endblock title %}
+{% block title %} Criar conta | Shortened URLs {% endblock title %}
 {% block content %}
    <div class="container mt-5">
       <div class="row justify-content-center">
          <div class="col-md-6 col-lg-4">
-               <div class="card p-4 shadow-sm">
-                  <h2>Criar Conta</h2>
-                  <form method="post">
-                     {% csrf_token %}
-                     {{ form.as_p }}
-                     <br>
-                     <button type="submit" class="btn btn-primary">Criar conta</button>
-                  </form>
-                  <p><a class="link-opacity-100-hover" href="{% url 'userapp:login' %}">Já possui uma conta? Entrar</a></p>
-               </div>
+            <div class="card p-4 shadow-sm">
+               <h2>Criar conta</h2>
+               <form method="post">
+                  {% csrf_token %}
+                  {{ form.as_p }}
+                  <button type="submit" class="btn btn-primary mt-3">Criar conta</button>
+               </form>
+               <p><a class="link-opacity-100-hover" href="{% url 'userapp:login' %}">Já possui uma conta? Entrar</a></p>
+            </div>
          </div>
       </div>
    </div>

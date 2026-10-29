@@ -21,3 +21,5 @@ class RegisterForm(UserCreationForm):
 
         for field in self.fields.values():
             field.widget.attrs['class'] = 'form-control'
+
+        self.fields['password2'].help_text = ''

@@ -11,8 +11,7 @@
                 <form method="post">
                     {% csrf_token %}
                     {{ form.as_p }}
-                    <br>
-                    <button type="submit" class="btn btn-primary">Entrar</button>
+                    <button type="submit" class="btn btn-primary mt-3">Entrar</button>
                 </form>
                 <p><a class="link-opacity-100-hover" href="{% url 'userapp:register' %}">Não possui uma conta? Criar conta</a></p>
             </div>
